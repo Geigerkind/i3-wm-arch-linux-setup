@@ -1,0 +1,38 @@
+XTerm*background:#222222
+XTerm*foreground:#d0d0d0
+XTerm*cursorColor:#d0d0d0
+XTerm*selectToClipboard:true
+XTerm*saveLines:1024
+XTerm*multiClickTime:250
+XTerm*scrollTtyOutput: false
+XTerm*scrollKey: true
+XTerm*alwaysUseMods: true
+XTerm*metaSendsEscape: true
+XTerm*utf8Title: true 
+XTerm*scrollBar:true
+XTerm*rightScrollBar: true
+
+XTerm*color0:  #000000
+XTerm*color1:  #B21818
+XTerm*color2:  #18B218
+XTerm*color3:  #B26818
+XTerm*color4:  #1818B2
+XTerm*color5:  #B218B2
+XTerm*color6:  #18B2B2
+XTerm*color7:  #B2B2B2
+XTerm*color8:  #686868
+XTerm*color9:  #FF5454
+XTerm*color10: #54FF54
+XTerm*color11: #FFFF54
+XTerm*color12: #5454FF
+XTerm*color13: #FF54FF
+XTerm*color14: #54FFFF
+XTerm*color15: #FFFFFF
+XTerm*boldColors: true
+
+xterm*VT100.Translations: #override \
+                 Ctrl Shift <Key>V:    insert-selection(CLIPBOARD) \n\
+                 Ctrl Shift <Key>C:    copy-selection(CLIPBOARD)
+
+XTerm*VT100.font: -misc-fixed-medium-r-semicondensed--0-0-75-75-c-0-iso8859-1
+XTerm*faceName: inconsolata:pixelsize=16
