@@ -112,7 +112,7 @@ su shino
 sudo pacman -S pango kbd wget clang pv cmake git ntfs-3g fuse udisks2 htop ninja python gtk2 gconf libnotify libxss unzip dos2unix bc python2 xbindkeys neofetch  
 
 **Pretty font for our console and polybar**  
-sudo pacman -S ttf-font-awesome ttf-inconsolata  
+sudo pacman -S ttf-font-awesome ttf-inconsolata ttf-dejavu  
 
 **Display server**  
 sudo pacman -S xorg-server i3-wm dmenu i3lock xorg-xinit xorg-xrandr  
@@ -121,7 +121,7 @@ sudo pacman -S xorg-server i3-wm dmenu i3lock xorg-xinit xorg-xrandr
 sudo pacman -S alsa-utils pulseaudio pavucontrol  
 
 **Basic applications**  
-sudo pacman -S firefox xterm notepadqq  
+sudo pacman -S firefox xterm notepadqq code  
 
 **For Image capturing I suggest flameshot or ksnip.**  
 **I could not get flameshot to work, but ksnip seems fine**  
@@ -210,10 +210,6 @@ makepkg
 sudo pacman -U <PATH/TO/PKG>  
 cd ../  
 rm -Rf polybar  
-
-**Install your favorite code editor**  
-**I use VS Code, because atom is meh and I havent found a better one yet**  
-**VS Code is also meh, so hit me up with suggestions**  
 
 **We are done!**  
 **Type repeatedly exit until you are at the start again and then reboot**  
