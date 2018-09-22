@@ -30,7 +30,7 @@ font pango:Source Adobe Pro 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec xterm
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -173,3 +173,4 @@ for_window [class="^.*"] border pixel 1
 exec_always "setxkbmap -layout de"
 exec --no-startup-id discord
 exec_always "bash ~/.config/polybar/launch.sh"
+exec_always "xbindkeys -p"

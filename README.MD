@@ -121,7 +121,7 @@ sudo pacman -S xorg-server i3-wm dmenu i3lock xorg-xinit xorg-xrandr
 sudo pacman -S alsa-utils pulseaudio pavucontrol  
 
 **Basic applications**  
-sudo pacman -S firefox xterm notepadqq code  
+sudo pacman -S firefox alacritty notepadqq code  
 
 **For Image capturing I suggest flameshot or ksnip.**  
 **I could not get flameshot to work, but ksnip seems fine**  
