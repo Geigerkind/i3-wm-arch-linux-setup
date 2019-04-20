@@ -10,7 +10,7 @@ loadkeys de-latin1
 
 **Format disks for a clean start**  
 **This will open a application to set partitions**  
-fdisk /dev/sda  
+fdisk /dev/nvme0n1  
 
 **Delete all partitions**  
 d, enter ... (Repeat, until all partitions are deleted)  
@@ -19,44 +19,36 @@ n (new)
 p (primary)  
 **If it asks you to remove some kind of old signature, agree**  
 1: boot: Sequence: n, p, enter, + 1GiB (enter)  
-2: root: Sequence: n, p, enter, + 20GiB (enter)  
-3: swap: Sequence: n, p, enter, + 4GiB (enter)  
+2: root: Sequence: n, p, enter, + 100GiB (enter)  
+3: swap: Sequence: n, p, enter, + 16GiB (enter)  
 3: home: Sequence: n, p, enter, enter (Rest for home)  
 
 **Format all disks**  
-mkfs.ext4 /dev/sda1  
-mkfs.ext4 /dev/sda2  
-mkfs.ext4 /dev/sda4  
+mkfs.ext4 /dev/nvme0n1p1  
+mkfs.ext4 /dev/nvme0n1p2  
+mkfs.ext4 /dev/nvme0n1p4  
 
 **Setup swap**  
-mkswap /dev/sda3  
-swapon /dev/sda3  
+mkswap /dev/nvme0n1p3  
+swapon /dev/nvme0n1p3  
 
 **Mount the file system**  
-mount /dev/sda2 /mnt  
+mount /dev/nvme0n1p2 /mnt  
 mkdir /mnt/boot  
 mkdir /mnt/home  
-mount /dev/sda1 /mnt/boot  
-mount /dev/sda4 /mnt/home  
+mount /dev/nvme0n1p1 /mnt/boot  
+mount /dev/nvme0n1p4 /mnt/home  
 
 **Install arch**  
 pacstrap /mnt base base-devel  
 genfstab -U /mnt >> /mnt/etc/fstab  
 
-**Chroot: We are now in our system, yaaay**  
-arch-chroot /mnt  
-
-**Setup your clock**  
-**You can just ls this filesystem below to find yours**  
-ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime  
-hwclock --systohc --utc  
-
-**Setup locale**  
-**Uncomment the langauges, that you need**  
 nano /etc/locale.gen  
-local-gen  
+locale-gen  
 echo LANG=en_US.UTF-8 > /etc/locale.conf  
 export LANG=en_US.UTF-8  
+export KEYMAP=de-latin1  
+echo "KEYMAP=de-latin1" > /etc/vconsole.conf  
 
 **Setup hostname**  
 echo robot > /etc/hostname  
@@ -66,8 +58,8 @@ echo "127.0.1.1   robot.localdomain robot" >> /etc/hosts
 
 **Install your bootloader of choice, I use grub, cause Im a scrub and dont know better**  
 **Damn, what a rime**  
-pacman -S grub  
-grub-install /dev/sda  
+pacman -S grub efibootmgr  
+grub-install /dev/nvme0n1  
 grub-mkconfig -o /boot/grub/grub.cfg  
 
 **Setup root password**  
@@ -78,7 +70,7 @@ pacman -Syu
 
 **Create sudo account**  
 pacman -S sudo  
-useradd shino  
+useradd -m -g wheel shino  
 passwd shino  
 mkdir /home/shino  
 chown -R shino:root /home/shino  
@@ -115,13 +107,16 @@ sudo pacman -S pango kbd wget clang pv cmake git ntfs-3g fuse udisks2 htop ninja
 sudo pacman -S ttf-font-awesome ttf-inconsolata ttf-dejavu  
 
 **Display server**  
-sudo pacman -S xorg-server i3-wm dmenu i3lock xorg-xinit xorg-xrandr  
+sudo pacman -S xorg-server i3-wm i3lock xorg-xinit xorg-xrandr thunar perl-anyevent  
 
 **Audio**  
 sudo pacman -S alsa-utils pulseaudio pavucontrol  
 
+**Graphics**   
+sudo pacman -S nvidia-dkms cuda cudnn
+
 **Basic applications**  
-sudo pacman -S firefox alacritty notepadqq code  
+sudo pacman -S firefox alacritty notepadqq code thunderbird  
 
 **For Image capturing I suggest flameshot or ksnip.**  
 **I could not get flameshot to work, but ksnip seems fine**  
@@ -212,7 +207,7 @@ git clone "https://aur.archlinux.org/polybar.git"
 cd polybar  
 makepkg  
 sudo pacman -U <PATH/TO/PKG>  
-cd ../  
+cd ../  dmenu
 rm -Rf polybar  
 
 **We are done!**  
@@ -296,4 +291,4 @@ sudo nano /boot/grub/grub.cfg
 **When the entry is added, we just generate a new one**  
 **Dont worry if your kernel doesnt boot, you can go back to the default one as fallback**  
 **Given you have not overwritten it xD**  
-grub-mkconfig -o /boot/grub/grub.cfg  
+sudo grub-mkconfig -o /boot/grub/grub.cfg  
