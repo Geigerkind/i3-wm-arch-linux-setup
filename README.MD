@@ -81,14 +81,14 @@ Add shino
 **Disable root login**  
 passwd -l root  
 
-**Find your network device, for me its enp2s0**  
+**Find your network device, for me its enp4s0**  
 ip link  
 
 **Configure your network**  
-echo "[Match]" > /etc/systemd/network/enp2s0.network  
-echo "name=de*" >> /etc/systemd/network/enp2s0.network  
-echo "[Network]" >> /etc/systemd/network/enp2s0.network  
-echo "DHCP=yes" >> /etc/systemd/network/enp2s0.network  
+echo "[Match]" > /etc/systemd/network/enp4s0.network  
+echo "name=de*" >> /etc/systemd/network/enp4s0.network  
+echo "[Network]" >> /etc/systemd/network/enp4s0.network  
+echo "DHCP=yes" >> /etc/systemd/network/enp4s0.network  
 
 **Enable it**  
 systemctl enable systemd-networkd  
