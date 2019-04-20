@@ -6,3 +6,4 @@ sleep 1;
 
 polybar monitor1 &
 polybar monitor2 &
+polybar monitor3 &

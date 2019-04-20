@@ -116,7 +116,7 @@ sudo pacman -S alsa-utils pulseaudio pavucontrol
 sudo pacman -S nvidia-dkms cuda cudnn
 
 **Basic applications**  
-sudo pacman -S firefox alacritty notepadqq code thunderbird  
+sudo pacman -S firefox alacritty notepadqq code thunderbird vagrant virtualbox  
 
 **For Image capturing I suggest flameshot or ksnip.**  
 **I could not get flameshot to work, but ksnip seems fine**  
@@ -125,16 +125,14 @@ sudo pacman -S firefox alacritty notepadqq code thunderbird
 **Stuff that I needed, maybe you will need it too**  
 sudo pacman -S  teamspeak3 telegram-desktop nginx mariadb unixodbc mono  
 
-mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
-sudo systemctl enable mysqld
-sudo systemctl enable nginx
+mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql  
+sudo systemctl enable mysqld  
+sudo systemctl enable nginx  
 
 **Create filesystem for usb slots**  
 sudo mkdir /media/  
 sudo mdkir /media/usb1  
-sudo mdkir /media/usb2  
-sudo mdkir /media/usb3  
-sudo mdkir /media/usb4  
+sudo mdkir /media/usb2   
 
 **Insert a usb with the config files and copy them to the apropriate place**  
 **Mounting an USB for dummies (Like me)**  
@@ -145,12 +143,6 @@ sudo mount /dev/sga1 /mount/usb1
 
 cp -R /media/usb1/.config ~/  
 cp /media/usb1/.bashrc ~/  
-cp /media/usb1/.Xdefaults ~/  
-
-**This one is special**  
-**I use an usb headset with volume control**  
-**By default that does not work, thats a fix for it**  
-cp /media/usb1/.xbindkeysrc ~/  
 
 echo "exec i3" >> ~/.xinitrc  
 

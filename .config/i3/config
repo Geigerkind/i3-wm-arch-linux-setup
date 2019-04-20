@@ -171,6 +171,20 @@ for_window [class="^.*"] border pixel 1
 #        status_command i3status
 #}
 exec_always "setxkbmap -layout de"
-exec --no-startup-id discord
 exec_always "bash ~/.config/polybar/launch.sh"
 exec_always "xbindkeys -p"
+exec_always "xrandr --output HDMI-0 --mode 2560x1440 --rate 60 --right-of DP-4 --output DP-0 --mode 2560x1440 --rate 60 --left-of DP-4 --output DP-4 --mode 2560x1440 --rate 144"
+#exec --no-startup-id discord
+#exec --no-startup-id teamspeak3
+#exec --no-startup-id telegram-desktop
+#exec --no-startup-id thunderbird
+#exec --no-startup-id i3-msg 'workspace 1:Hack exec alacritty'
+#exec --no-startup-id i3-msg 'workspace 2:Social exec discord'
+#exec --no-startup-id i3-msg 'workspace 2:Social exec teamspeak3'
+#exec --no-startup-id i3-msg 'workspace 2:Social exec telegram-desktop'
+#exec --no-startup-id i3-msg 'workspace 3:Web exec firefox'
+#exec --no-startup-id i3-msg 'workspace 4:Mail exec thunderbird'
+#exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/shino/.i3/workspace-1.json'"
+#exec --no-startup-id "i3-msg 'workspace 2; append_layout /home/shino/.i3/workspace-2.json'"
+#exec --no-startup-id "i3-msg 'workspace 3; append_layout /home/shino/.i3/workspace-3.json'"
+#exec --no-startup-id "i3-msg 'workspace 4; append_layout /home/shino/.i3/workspace-4.json'"

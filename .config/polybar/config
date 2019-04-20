@@ -1,5 +1,5 @@
 [bar/monitor1]
-monitor = ${env:MONITOR:VGA-1}
+monitor = ${env:MONITOR:HDMI-0}
 width = 100%
 height = 27
 radius = 0
@@ -34,7 +34,42 @@ cursor-click = pointer
 cursor-scroll = ns-resize
 
 [bar/monitor2]
-monitor = ${env:MONITOR:DVI-D-1}
+monitor = ${env:MONITOR:DP-0}
+width = 100%
+height = 27
+radius = 0
+fixed-center = false
+
+background = #272827
+foreground = #657b83
+
+line-size = 3
+line-color =
+
+border-size = 0
+border-color =
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = "Source Code Pro Semibold:size=10;1"
+font-1 = "Font Awesome 5 Free:style=Solid:size=10;1"
+font-2 = "Font Awesome 5 Brands:size=10;1"
+
+modules-left = i3 title
+modules-right = cpu memory date powermenu
+
+#tray-position =
+#;tray-padding =
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[bar/monitor3]
+monitor = ${env:MONITOR:DP-4}
 width = 100%
 height = 27
 radius = 0

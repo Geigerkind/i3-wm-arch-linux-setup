@@ -31,7 +31,7 @@ window:
 
   # Window decorations
   # Setting this to false will result in window without borders and title bar.
-  decorations: true
+  decorations: none
 
 scrolling:
   # How many lines of scrollback to keep,
@@ -120,7 +120,8 @@ font:
   # screens and make reading text a little easier.
   # On X11 it is possible to change the DPI for each instance of alacritty by using
   # `WINIT_HIDPI_FACTOR=1.0 alacritty` to scale the font.
-  scale_with_dpi: true
+  # scale_with_dpi: true
+  #WINIT_HIDPI_FACTOR=
 
   # OS X only: use thin stroke font rendering. Thin strokes are suitable
   # for retina displays, but for non-retina you probably want this set to
@@ -132,7 +133,7 @@ render_timer: false
 
 # Use custom cursor colors. If true, display the cursor in the cursor.foreground
 # and cursor.background colors, otherwise invert the colors of the cursor.
-custom_cursor_colors: false
+# custom_cursor_colors: false
 
 # Colors (Pencil Dark)
 colors:
@@ -217,12 +218,14 @@ mouse:
   double_click: { threshold: 300 }
   triple_click: { threshold: 300 }
 
+mouse.url.launcher: None
+
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
 
 dynamic_title: true
 
-hide_cursor_when_typing: false
+mouse.hide_when_typing: false
 
 # Style of the cursor
 #
@@ -230,10 +233,10 @@ hide_cursor_when_typing: false
 # - Block
 # - Underline
 # - Beam
-cursor_style: Block
+cursor.style: Block
 
 # Whether the cursor should be a hollow block on window focus loss
-unfocused_hollow_cursor: true
+cursor.unfocused_hollow: true
 
 # Live config reload (changes require restart)
 live_config_reload: true
