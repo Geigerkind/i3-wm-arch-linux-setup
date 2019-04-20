@@ -104,7 +104,7 @@ su shino
 sudo pacman -S pango kbd wget clang pv cmake git ntfs-3g fuse udisks2 htop ninja python gtk2 gconf libnotify libxss unzip dos2unix bc python2 openssh rustup  
 
 **Pretty font for our console and polybar**  
-sudo pacman -S ttf-font-awesome ttf-inconsolata ttf-dejavu  
+sudo pacman -S ttf-font-awesome ttf-inconsolata ttf-dejavu noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra  
 
 **Display server**  
 sudo pacman -S xorg-server i3-wm i3lock xorg-xinit xorg-xrandr thunar perl-anyevent  
