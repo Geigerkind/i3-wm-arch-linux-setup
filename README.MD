@@ -56,10 +56,12 @@ echo "127.0.0.1   localhost" >> /etc/hosts
 echo "::1         localhost" >> /etc/hosts  
 echo "127.0.1.1   robot.localdomain robot" >> /etc/hosts  
 
+arch-chroot /mnt
+
 **Install your bootloader of choice, I use grub, cause Im a scrub and dont know better**  
 **Damn, what a rime**  
 pacman -S grub efibootmgr  
-grub-install /dev/nvme0n1  
+grub-install --target=i386-pc /dev/nvme0n1  
 grub-mkconfig -o /boot/grub/grub.cfg  
 
 **Setup root password**  
