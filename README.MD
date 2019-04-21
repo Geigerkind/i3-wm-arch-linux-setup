@@ -103,7 +103,7 @@ echo "nameserver 8.8.4.4" >> /etc/resolv.conf
 su shino  
 
 **Stuff we need for all kinds of things later**  
-sudo pacman -S pango kbd wget clang pv cmake git ntfs-3g fuse udisks2 htop ninja python gtk2 gconf libnotify libxss unzip dos2unix bc python2 openssh rustup linux-headers  
+sudo pacman -S pango kbd wget clang pv cmake git ntfs-3g fuse udisks2 htop ninja python gtk2 gconf libnotify libxss unzip dos2unix bc python2 openssh rustup linux-headers openssl-1.0 npm yarn nodejs-lts-dubnium    
 
 **Pretty font for our console and polybar**  
 sudo pacman -S ttf-font-awesome ttf-inconsolata ttf-dejavu noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra  
