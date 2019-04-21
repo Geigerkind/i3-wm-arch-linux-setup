@@ -120,10 +120,6 @@ sudo pacman -S nvidia-dkms cuda cudnn
 **Basic applications**  
 sudo pacman -S firefox alacritty notepadqq code thunderbird vagrant virtualbox  
 
-**For Image capturing I suggest flameshot or ksnip.**  
-**I could not get flameshot to work, but ksnip seems fine**  
-**https://aur.archlinux.org/ksnip-git.git**  
-
 **Stuff that I needed, maybe you will need it too**  
 sudo pacman -S  teamspeak3 telegram-desktop nginx mariadb unixodbc mono  
 
