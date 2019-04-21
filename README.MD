@@ -43,6 +43,8 @@ mount /dev/nvme0n1p4 /mnt/home
 pacstrap /mnt base base-devel  
 genfstab -U /mnt >> /mnt/etc/fstab  
 
+arch-chroot /mnt
+
 nano /etc/locale.gen  
 locale-gen  
 echo LANG=en_US.UTF-8 > /etc/locale.conf  
@@ -55,8 +57,6 @@ echo robot > /etc/hostname
 echo "127.0.0.1   localhost" >> /etc/hosts  
 echo "::1         localhost" >> /etc/hosts  
 echo "127.0.1.1   robot.localdomain robot" >> /etc/hosts  
-
-arch-chroot /mnt
 
 **Install your bootloader of choice, I use grub, cause Im a scrub and dont know better**  
 **Damn, what a rime**  
@@ -123,7 +123,7 @@ sudo pacman -S firefox alacritty notepadqq code thunderbird vagrant virtualbox
 **Stuff that I needed, maybe you will need it too**  
 sudo pacman -S  teamspeak3 telegram-desktop nginx mariadb unixodbc mono  
 
-mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql  
+sudo mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql  
 sudo systemctl enable mysqld  
 sudo systemctl enable nginx  
 
