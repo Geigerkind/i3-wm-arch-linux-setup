@@ -115,7 +115,7 @@ sudo pacman -S xorg-server i3-wm i3lock xorg-xinit xorg-xrandr thunar perl-anyev
 sudo pacman -S alsa-utils pulseaudio pavucontrol  
 
 **Graphics**   
-sudo pacman -S nvidia-dkms cuda cudnn
+sudo pacman -S nvidia-dkms cuda cudnn lib32-nvidia-utils
 
 **Basic applications**  
 sudo pacman -S firefox alacritty notepadqq code thunderbird vagrant virtualbox  
